@@ -1,0 +1,17 @@
+{
+  "name": "@lightbasenl/aws-codepipeline-slack",
+  "description": "Trigger an AWS CodePipeline from GitHub Actions with Slack notifications",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@actions/core": "1.9.0",
+    "@aws-sdk/client-codepipeline": "3.142.0",
+    "node-fetch": "^3.2.10"
+  },
+  "devDependencies": {
+    "@compas/cli": "0.0.211",
+    "@compas/eslint-plugin": "0.0.211"
+  },
+  "prettier": "@compas/eslint-plugin/prettierrc"
+}

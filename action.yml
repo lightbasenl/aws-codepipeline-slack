@@ -1,0 +1,20 @@
+name: "lightbasenl/aws-codepipeline-slack"
+description:
+  "Trigger an AWS CodePipeline from GitHub Actions with Slack notifications"
+inputs:
+  pipeline:
+    description: "The name of the CodePipeline"
+    required: true
+  wait_completion:
+    description: "Monitor CodePipeline and update Action"
+    required: false
+    default: "true"
+  slack_token:
+    description: "Slack APP oAuth token"
+    required: false
+  slack_channel:
+    description: "Slack channel for notification"
+    required: false
+runs:
+  using: "node16"
+  main: "src/index.js"
