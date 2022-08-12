@@ -5,13 +5,13 @@
   "type": "module",
   "private": true,
   "dependencies": {
-    "@actions/core": "1.9.0",
-    "@aws-sdk/client-codepipeline": "3.142.0",
-    "node-fetch": "^3.2.10"
+    "@actions/core": "1.9.1",
+    "@aws-sdk/client-codepipeline": "3.145.0",
+    "node-fetch": "3.2.10"
   },
   "devDependencies": {
-    "@compas/cli": "0.0.211",
-    "@compas/eslint-plugin": "0.0.211"
+    "@compas/cli": "0.0.212",
+    "@compas/eslint-plugin": "0.0.212"
   },
   "prettier": "@compas/eslint-plugin/prettierrc"
 }

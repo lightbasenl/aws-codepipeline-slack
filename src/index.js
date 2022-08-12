@@ -87,10 +87,9 @@ try {
     }
   }
 
+  // expose Slack and CodePipeline data for other actions
   core.setOutput("data", {
-    state: {
-      slack,
-    },
+    state: slack,
   });
 } catch (error) {
   core.setFailed(error.message);

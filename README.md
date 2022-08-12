@@ -1,6 +1,6 @@
 # AWS CodePipeline Trigger with Slack notification
 
-## Prerequisite
+## Prerequisites
 
 - AWS CodePipeline
 - AWS login role with the following policies
@@ -10,11 +10,13 @@
   - `codepipeline:ListPipelineExecutions`
 - A [Slack APP](https://api.slack.com/apps), with the scope: `chat:write`
 
-## Setup
+# Usage
 
-To configure AWS credentials in GitHub Actions, use
-[configure-aws-credentials](https://github.com/marketplace/actions/configure-aws-credentials-action-for-github-actions).
-The.
+> To configure AWS credentials in GitHub Actions, use
+> [configure-aws-credentials](https://github.com/marketplace/actions/configure-aws-credentials-action-for-github-actions).
+
+See [action.yml](action.yml) for parameter (input) and output information. The
+GitHub Action could look like this:
 
 ```yaml
 - name: configure AWS credentials
@@ -24,7 +26,7 @@ The.
 
 - name: Start CodePipeline
   id: pipeline
-  uses: lightbasenl/aws-codepipeline-slack@{hash}
+  uses: lightbasenl/aws-codepipeline-slack@{hash|tag}
   with:
     pipeline: my-pipeline
     wait_completion: true
@@ -35,10 +37,6 @@ The.
   run: echo '${{toJSON(steps.pipeline.outputs.data)}}'
 ```
 
-How you provide the secrets is up to you. Check the
-[configure-aws-credentials](https://github.com/marketplace/actions/configure-aws-credentials-action-for-github-actions)
-docs for the different possibilities.
-
 ## Contribute
 
 Steps:
@@ -47,19 +45,25 @@ Steps:
 2. Ensure deps needed during runtime are in the `dependencies` list inside the
    `package.json`
 3. Follow below commands to create a new release
-4. Use commit hash as GitHub action version
+4. Use commit hash as GitHub action version (or create a version tag as pointer)
 
 ```shell
+# commit
 yarn --production
 git add node_modules/* -f
 git add action.yml src/* package.json yarn.lock README.md
 git commit -m "Release {version}: {message}"
 git push
 
+# tag
+git tag vX.X {commit} -f
+git push --tags
 ```
 
-Source:
-https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action
+## Sources
+
+- https://docs.github.com/en/actions/creating-actions/about-custom-actions
+- https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action
 
 ## Credits
 
