@@ -6,7 +6,7 @@
   "private": true,
   "dependencies": {
     "@actions/core": "1.9.1",
-    "@aws-sdk/client-codepipeline": "3.145.0",
+    "@aws-sdk/client-codepipeline": "3.161.0",
     "node-fetch": "3.2.10"
   },
   "devDependencies": {
